@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,20 +7,15 @@
 
     <title>Pengaduan - Desa Sepadu</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- FONT AWESOME -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-
-<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
@@ -60,13 +55,11 @@
             Kontak
         </a>
 
-        <!-- PENGADUAN KHUSUS -->
         <a href="pengaduan.html" class="active">
             <i class="fa-solid fa-file-pen"></i>
             Pengaduan
         </a>
 
-        <!-- ADMIN -->
         <a href="admin.html" class="admin-menu">
             <i class="fa-solid fa-user-shield"></i>
             Admin
@@ -76,8 +69,6 @@
 
 </header>
 
-
-<!-- ================= HEADER PENGADUAN ================= -->
 
 <section class="hero">
 
@@ -94,8 +85,8 @@
         </h1>
 
         <p>
-            Sampaikan pengaduan, keluhan, atau saran
-            untuk membantu kemajuan Desa Sepadu.
+            Sampaikan pengaduan untuk membantu
+            kemajuan Desa Sepadu.
         </p>
 
     </div>
@@ -103,27 +94,23 @@
 </section>
 
 
-<!-- ================= FORM PENGADUAN ================= -->
-
 <section class="complaint-section">
 
     <div class="complaint-box">
 
-        <!-- INFORMASI -->
-
         <div class="complaint-info">
 
             <span class="section-label">
-                FORM PENGADUAN
+                PENGADUAN MASYARAKAT
             </span>
 
             <h2>
-                Sampaikan Pengaduan Anda
+                Sampaikan Aduan Anda
             </h2>
 
             <p>
-                Silakan isi formulir pengaduan dengan data
-                yang benar dan jelas.
+                Silakan isi formulir berikut dengan
+                informasi pengaduan yang jelas.
             </p>
 
             <div class="complaint-note">
@@ -131,8 +118,8 @@
                 <i class="fa-solid fa-circle-info"></i>
 
                 <span>
-                    Pengaduan akan diterima oleh admin desa
-                    untuk ditindaklanjuti.
+                    Setiap pengaduan akan diterima
+                    dan ditindaklanjuti oleh admin desa.
                 </span>
 
             </div>
@@ -140,73 +127,29 @@
         </div>
 
 
-        <!-- FORM -->
-
-        <form id="complaintForm" class="complaint-form">
-
-            <!-- NAMA -->
+        <form id="pengaduanForm" class="complaint-form">
 
             <div class="form-group">
 
                 <label for="nama">
-                    Nama Lengkap
+                    Nama
                 </label>
 
                 <input
                     type="text"
                     id="nama"
                     name="nama"
-                    placeholder="Masukkan nama lengkap"
+                    placeholder="Masukkan nama"
                     required
                 >
 
             </div>
 
-
-            <!-- NIK -->
-
-            <div class="form-group">
-
-                <label for="nik">
-                    NIK
-                </label>
-
-                <input
-                    type="text"
-                    id="nik"
-                    name="nik"
-                    placeholder="Masukkan NIK"
-                    required
-                >
-
-            </div>
-
-
-            <!-- NOMOR HP -->
-
-            <div class="form-group">
-
-                <label for="nohp">
-                    Nomor HP
-                </label>
-
-                <input
-                    type="tel"
-                    id="nohp"
-                    name="nohp"
-                    placeholder="Masukkan nomor HP"
-                    required
-                >
-
-            </div>
-
-
-            <!-- KATEGORI -->
 
             <div class="form-group">
 
                 <label for="kategori">
-                    Kategori Pengaduan
+                    Kategori
                 </label>
 
                 <select
@@ -252,45 +195,22 @@
             </div>
 
 
-            <!-- JUDUL -->
-
             <div class="form-group">
 
-                <label for="judul">
-                    Judul Pengaduan
-                </label>
-
-                <input
-                    type="text"
-                    id="judul"
-                    name="judul"
-                    placeholder="Contoh: Jalan Desa Rusak"
-                    required
-                >
-
-            </div>
-
-
-            <!-- ISI PENGADUAN -->
-
-            <div class="form-group">
-
-                <label for="pengaduan">
+                <label for="isi_pengaduan">
                     Isi Pengaduan
                 </label>
 
                 <textarea
-                    id="pengaduan"
-                    name="pengaduan"
-                    rows="6"
-                    placeholder="Tuliskan pengaduan Anda..."
+                    id="isi_pengaduan"
+                    name="isi_pengaduan"
+                    rows="7"
+                    placeholder="Tuliskan isi pengaduan..."
                     required
                 ></textarea>
 
             </div>
 
-
-            <!-- TOMBOL -->
 
             <button
                 type="submit"
@@ -304,12 +224,7 @@
             </button>
 
 
-            <!-- PESAN -->
-
-            <p
-                id="complaintMessage"
-                class="complaint-message"
-            ></p>
+            <p id="pesan"></p>
 
         </form>
 
@@ -318,16 +233,11 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
     <div class="footer-logo">
-
         <i class="fa-solid fa-leaf"></i>
-
         Desa Sepadu
-
     </div>
 
     <p>
@@ -341,27 +251,23 @@
 </footer>
 
 
-<!-- ================= GOOGLE APPS SCRIPT ================= -->
-
 <script>
 
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
 
-
 const form =
-document.getElementById("complaintForm");
+document.getElementById("pengaduanForm");
 
-
-const message =
-document.getElementById("complaintMessage");
+const pesan =
+document.getElementById("pesan");
 
 
 form.addEventListener("submit", function(e) {
 
     e.preventDefault();
 
-    message.innerHTML =
+    pesan.innerHTML =
         "⏳ Pengaduan sedang dikirim...";
 
 
@@ -377,7 +283,7 @@ form.addEventListener("submit", function(e) {
 
     .then(data => {
 
-        message.innerHTML =
+        pesan.innerHTML =
             "✅ Pengaduan berhasil dikirim!";
 
         form.reset();
@@ -386,7 +292,7 @@ form.addEventListener("submit", function(e) {
 
     .catch(error => {
 
-        message.innerHTML =
+        pesan.innerHTML =
             "❌ Pengaduan gagal dikirim.";
 
         console.error(error);
@@ -399,4 +305,4 @@ form.addEventListener("submit", function(e) {
 
 </body>
 </html>
-
+```
