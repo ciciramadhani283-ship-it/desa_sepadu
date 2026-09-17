@@ -1,0 +1,402 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pengaduan - Desa Sepadu</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-leaf"></i>
+
+        <div>
+            <strong>Desa Sepadu</strong>
+            <small>Dusun Semayang</small>
+        </div>
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Beranda
+        </a>
+
+        <a href="sejarah.html">
+            <i class="fa-solid fa-book-open"></i>
+            Sejarah
+        </a>
+
+        <a href="fasilitas.html">
+            <i class="fa-solid fa-building"></i>
+            Fasilitas
+        </a>
+
+        <a href="lokasi.html">
+            <i class="fa-solid fa-location-dot"></i>
+            Lokasi
+        </a>
+
+        <a href="kontak.html">
+            <i class="fa-solid fa-phone"></i>
+            Kontak
+        </a>
+
+        <!-- PENGADUAN KHUSUS -->
+        <a href="pengaduan.html" class="active">
+            <i class="fa-solid fa-file-pen"></i>
+            Pengaduan
+        </a>
+
+        <!-- ADMIN -->
+        <a href="admin.html" class="admin-menu">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HEADER PENGADUAN ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            LAYANAN MASYARAKAT
+        </span>
+
+        <h1>
+            Pengaduan
+            <br>
+            <span>Masyarakat</span>
+        </h1>
+
+        <p>
+            Sampaikan pengaduan, keluhan, atau saran
+            untuk membantu kemajuan Desa Sepadu.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FORM PENGADUAN ================= -->
+
+<section class="complaint-section">
+
+    <div class="complaint-box">
+
+        <!-- INFORMASI -->
+
+        <div class="complaint-info">
+
+            <span class="section-label">
+                FORM PENGADUAN
+            </span>
+
+            <h2>
+                Sampaikan Pengaduan Anda
+            </h2>
+
+            <p>
+                Silakan isi formulir pengaduan dengan data
+                yang benar dan jelas.
+            </p>
+
+            <div class="complaint-note">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Pengaduan akan diterima oleh admin desa
+                    untuk ditindaklanjuti.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="complaintForm" class="complaint-form">
+
+            <!-- NAMA -->
+
+            <div class="form-group">
+
+                <label for="nama">
+                    Nama Lengkap
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    name="nama"
+                    placeholder="Masukkan nama lengkap"
+                    required
+                >
+
+            </div>
+
+
+            <!-- NIK -->
+
+            <div class="form-group">
+
+                <label for="nik">
+                    NIK
+                </label>
+
+                <input
+                    type="text"
+                    id="nik"
+                    name="nik"
+                    placeholder="Masukkan NIK"
+                    required
+                >
+
+            </div>
+
+
+            <!-- NOMOR HP -->
+
+            <div class="form-group">
+
+                <label for="nohp">
+                    Nomor HP
+                </label>
+
+                <input
+                    type="tel"
+                    id="nohp"
+                    name="nohp"
+                    placeholder="Masukkan nomor HP"
+                    required
+                >
+
+            </div>
+
+
+            <!-- KATEGORI -->
+
+            <div class="form-group">
+
+                <label for="kategori">
+                    Kategori Pengaduan
+                </label>
+
+                <select
+                    id="kategori"
+                    name="kategori"
+                    required
+                >
+
+                    <option value="">
+                        -- Pilih Kategori --
+                    </option>
+
+                    <option value="Infrastruktur">
+                        Infrastruktur
+                    </option>
+
+                    <option value="Kebersihan">
+                        Kebersihan
+                    </option>
+
+                    <option value="Keamanan">
+                        Keamanan
+                    </option>
+
+                    <option value="Pelayanan Desa">
+                        Pelayanan Desa
+                    </option>
+
+                    <option value="Lingkungan">
+                        Lingkungan
+                    </option>
+
+                    <option value="Fasilitas Desa">
+                        Fasilitas Desa
+                    </option>
+
+                    <option value="Lainnya">
+                        Lainnya
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- JUDUL -->
+
+            <div class="form-group">
+
+                <label for="judul">
+                    Judul Pengaduan
+                </label>
+
+                <input
+                    type="text"
+                    id="judul"
+                    name="judul"
+                    placeholder="Contoh: Jalan Desa Rusak"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ISI PENGADUAN -->
+
+            <div class="form-group">
+
+                <label for="pengaduan">
+                    Isi Pengaduan
+                </label>
+
+                <textarea
+                    id="pengaduan"
+                    name="pengaduan"
+                    rows="6"
+                    placeholder="Tuliskan pengaduan Anda..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- TOMBOL -->
+
+            <button
+                type="submit"
+                class="complaint-button"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Kirim Pengaduan
+
+            </button>
+
+
+            <!-- PESAN -->
+
+            <p
+                id="complaintMessage"
+                class="complaint-message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        Desa Sepadu
+
+    </div>
+
+    <p>
+        Dusun Semayang • Kecamatan Semparuk • Kabupaten Sambas
+    </p>
+
+    <small>
+        © 2026 Desa Sepadu. Semua hak dilindungi.
+    </small>
+
+</footer>
+
+
+<!-- ================= GOOGLE APPS SCRIPT ================= -->
+
+<script>
+
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
+
+
+const form =
+document.getElementById("complaintForm");
+
+
+const message =
+document.getElementById("complaintMessage");
+
+
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    message.innerHTML =
+        "⏳ Pengaduan sedang dikirim...";
+
+
+    fetch(scriptURL, {
+
+        method: "POST",
+
+        body: new FormData(form)
+
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+        message.innerHTML =
+            "✅ Pengaduan berhasil dikirim!";
+
+        form.reset();
+
+    })
+
+    .catch(error => {
+
+        message.innerHTML =
+            "❌ Pengaduan gagal dikirim.";
+
+        console.error(error);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+```
