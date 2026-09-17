@@ -1,230 +1,32 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin - Desa Sepadu</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <title>Admin Pengaduan - Desa Sepadu</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-    <style>
-
-        .admin-page {
-            min-height: calc(100vh - 78px);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 60px 20px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #edf2e4,
-                    #f4eee6
-                );
-        }
-
-
-        .admin-login {
-            width: 100%;
-            max-width: 430px;
-
-            padding: 38px;
-
-            background: white;
-
-            border: 1px solid #e5dfd3;
-
-            border-radius: 28px;
-
-            box-shadow:
-                0 20px 55px rgba(60,45,30,0.12);
-
-            animation: fadeUp 0.7s ease;
-        }
-
-
-        .admin-icon {
-            width: 70px;
-            height: 70px;
-
-            margin: 0 auto 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 22px;
-
-            background: #eaf1dc;
-
-            color: #78964b;
-
-            font-size: 27px;
-        }
-
-
-        .admin-login h1 {
-            text-align: center;
-
-            color: #4b3221;
-
-            font-size: 25px;
-
-            margin-bottom: 7px;
-        }
-
-
-        .admin-login > p {
-            text-align: center;
-
-            color: #776e64;
-
-            font-size: 12px;
-
-            line-height: 1.7;
-
-            margin-bottom: 28px;
-        }
-
-
-        .admin-form {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 17px;
-        }
-
-
-        .admin-form label {
-            display: block;
-
-            color: #4b3221;
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            margin-bottom: 7px;
-        }
-
-
-        .admin-form input {
-            width: 100%;
-
-            padding: 14px;
-
-            border: 1px solid #ddd8cf;
-
-            border-radius: 13px;
-
-            background: #fafaf8;
-
-            outline: none;
-
-            font-size: 12px;
-
-            color: #4b3221;
-        }
-
-
-        .admin-form input:focus {
-            border-color: #78964b;
-
-            background: white;
-
-            box-shadow:
-                0 0 0 3px rgba(120,150,75,0.10);
-        }
-
-
-        .admin-login-btn {
-            width: 100%;
-
-            padding: 14px;
-
-            border: none;
-
-            border-radius: 13px;
-
-            background: #78964b;
-
-            color: white;
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
-        }
-
-
-        .admin-login-btn:hover {
-            background: #4f6b32;
-
-            transform: translateY(-2px);
-        }
-
-
-        .back-home {
-            display: block;
-
-            margin-top: 20px;
-
-            text-align: center;
-
-            color: #78964b;
-
-            font-size: 11px;
-
-            font-weight: 600;
-        }
-
-
-        .back-home:hover {
-            color: #4f6b32;
-        }
-
-
-        #loginMessage {
-            text-align: center;
-
-            margin-top: 15px;
-
-            font-size: 11px;
-
-            color: #c45555;
-        }
-
-
-        @media (max-width: 500px) {
-
-            .admin-login {
-                padding: 28px 22px;
-            }
-
-        }
-
-    </style>
 
 </head>
 
 
 <body>
 
+
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
@@ -233,8 +35,13 @@
         <i class="fa-solid fa-leaf"></i>
 
         <div>
+
             <strong>Desa Sepadu</strong>
-            <small>Dusun Semayang</small>
+
+            <small>
+                Dusun Semayang
+            </small>
+
         </div>
 
     </div>
@@ -243,33 +50,66 @@
     <nav>
 
         <a href="index.html">
+
             <i class="fa-solid fa-house"></i>
+
             Beranda
+
         </a>
+
 
         <a href="sejarah.html">
+
             <i class="fa-solid fa-book-open"></i>
+
             Sejarah
+
         </a>
+
 
         <a href="fasilitas.html">
+
             <i class="fa-solid fa-building"></i>
+
             Fasilitas
+
         </a>
+
 
         <a href="lokasi.html">
+
             <i class="fa-solid fa-location-dot"></i>
+
             Lokasi
+
         </a>
+
 
         <a href="kontak.html">
+
             <i class="fa-solid fa-phone"></i>
+
             Kontak
+
         </a>
 
-        <a href="admin.html" class="active">
+
+        <a href="pengaduan.html">
+
+            <i class="fa-solid fa-file-pen"></i>
+
+            Pengaduan
+
+        </a>
+
+
+        <a href="admin.html"
+           class="active admin-menu">
+
             <i class="fa-solid fa-user-shield"></i>
+
             Admin
+
         </a>
 
     </nav>
@@ -277,145 +117,712 @@
 </header>
 
 
-<main class="admin-page">
 
-    <div class="admin-login">
+<!-- ================= HEADER ================= -->
 
+<section class="hero">
 
-        <div class="admin-icon">
+    <div class="hero-content">
 
-            <i class="fa-solid fa-user-shield"></i>
-
-        </div>
-
+        <span class="hero-label">
+            PANEL ADMIN
+        </span>
 
         <h1>
-            Login Admin
+            Kelola
+            <br>
+            <span>Pengaduan</span>
         </h1>
 
-
         <p>
-            Masuk untuk melihat dan mengelola
-            pengaduan masyarakat Desa Sepadu.
+            Kelola pengaduan masyarakat Desa Sepadu.
         </p>
 
+    </div>
 
-        <form id="loginForm" class="admin-form">
+</section>
 
 
-            <div>
 
-                <label for="username">
-                    Username
-                </label>
+<!-- ================= ADMIN ================= -->
 
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Masukkan username"
-                    required
-                >
+<section class="admin-section">
 
-            </div>
+    <div class="admin-container">
 
+
+        <!-- HEADER -->
+
+        <div class="admin-header">
 
             <div>
 
-                <label for="password">
-                    Password
-                </label>
+                <span class="section-label">
+                    DATA MASYARAKAT
+                </span>
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Masukkan password"
-                    required
-                >
+                <h2>
+                    Daftar Pengaduan
+                </h2>
 
             </div>
 
 
             <button
-                type="submit"
-                class="admin-login-btn">
+                class="refresh-button"
+                onclick="ambilData()">
 
-                <i class="fa-solid fa-right-to-bracket"></i>
+                <i class="fa-solid fa-rotate"></i>
 
-                Masuk sebagai Admin
+                Refresh
+
+            </button>
+
+        </div>
+
+
+        <!-- PESAN -->
+
+        <div
+            id="adminMessage"
+            class="admin-message">
+        </div>
+
+
+        <!-- DATA -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Nama</th>
+
+                        <th>Kategori</th>
+
+                        <th>Isi Pengaduan</th>
+
+                        <th>Tanggal</th>
+
+                        <th>Status</th>
+
+                        <th>Balasan</th>
+
+                        <th>Aksi</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="dataPengaduan">
+
+                    <tr>
+
+                        <td colspan="8">
+
+                            Memuat data...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MODAL BALAS ================= -->
+
+<div
+    id="modalBalas"
+    class="modal">
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <h2>
+                Balas Pengaduan
+            </h2>
+
+            <button
+                onclick="tutupModal()"
+                class="close-button">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+
+            <input
+                type="hidden"
+                id="balasID">
+
+
+            <div class="form-group">
+
+                <label>
+                    ID Pengaduan
+                </label>
+
+                <input
+                    type="text"
+                    id="tampilID"
+                    readonly>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Status
+                </label>
+
+                <select id="balasStatus">
+
+                    <option value="Menunggu">
+                        Menunggu
+                    </option>
+
+                    <option value="Diproses">
+                        Diproses
+                    </option>
+
+                    <option value="Selesai">
+                        Selesai
+                    </option>
+
+                    <option value="Ditolak">
+                        Ditolak
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Balasan Admin
+                </label>
+
+                <textarea
+                    id="balasan"
+                    rows="6"
+                    placeholder="Tuliskan balasan untuk masyarakat...">
+                </textarea>
+
+            </div>
+
+
+            <button
+                onclick="kirimBalasan()"
+                class="complaint-button"
+                id="btnBalas">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Kirim Balasan
 
             </button>
 
 
-        </form>
+            <p id="balasMessage"></p>
 
 
-        <p id="loginMessage"></p>
-
-
-        <a href="index.html" class="back-home">
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Kembali ke Beranda
-
-        </a>
-
+        </div>
 
     </div>
 
-</main>
+</div>
 
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        Desa Sepadu
+
+    </div>
+
+    <p>
+
+        Dusun Semayang • Kecamatan Semparuk
+        • Kabupaten Sambas
+
+    </p>
+
+    <small>
+
+        © 2026 Desa Sepadu.
+        Semua hak dilindungi.
+
+    </small>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-document
-.getElementById("loginForm")
-.addEventListener("submit", function(e) {
 
-    e.preventDefault();
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
 
 
-    const username =
-        document.getElementById("username").value;
 
-    const password =
-        document.getElementById("password").value;
+/* ========================================
+   AMBIL DATA PENGADUAN
+======================================== */
 
-
-    /*
-       LOGIN DEMO
-
-       Username : admin
-       Password : sepadu2026
-    */
+async function ambilData() {
 
 
-    if (
-        username === "admin" &&
-        password === "sepadu2026"
-    ) {
+    const tbody =
+        document.getElementById("dataPengaduan");
 
-        sessionStorage.setItem(
-            "adminLogin",
-            "true"
-        );
 
-        window.location.href =
-            "dashboard.html";
+    const message =
+        document.getElementById("adminMessage");
 
-    } else {
 
-        document.getElementById(
-            "loginMessage"
-        ).textContent =
-            "❌ Username atau password salah.";
+    tbody.innerHTML = `
+
+        <tr>
+
+            <td colspan="8">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Memuat data...
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try {
+
+
+        const response =
+            await fetch(scriptURL);
+
+
+        const data =
+            await response.json();
+
+
+        if (!Array.isArray(data)) {
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td colspan="8">
+
+                        ❌ Gagal mengambil data.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        if (data.length === 0) {
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td colspan="8">
+
+                        Belum ada pengaduan.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        tbody.innerHTML = "";
+
+
+        data.forEach(item => {
+
+
+            const tr =
+                document.createElement("tr");
+
+
+            tr.innerHTML = `
+
+                <td>
+                    <strong>
+                        ${escapeHTML(item.ID)}
+                    </strong>
+                </td>
+
+                <td>
+                    ${escapeHTML(item.Nama)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.Kategori)}
+                </td>
+
+                <td class="isi-aduan">
+                    ${escapeHTML(item.Isi_Pengaduan)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.Tanggal)}
+                </td>
+
+                <td>
+
+                    <span class="status status-${String(item.Status).toLowerCase()}">
+
+                        ${escapeHTML(item.Status)}
+
+                    </span>
+
+                </td>
+
+                <td class="isi-balasan">
+
+                    ${item.Balasan
+                        ? escapeHTML(item.Balasan)
+                        : "<em>Belum ada balasan</em>"
+                    }
+
+                </td>
+
+                <td>
+
+                    <button
+                        class="reply-button"
+                        onclick='bukaModal(${JSON.stringify(item)})'>
+
+                        <i class="fa-solid fa-reply"></i>
+
+                        Balas
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(tr);
+
+        });
+
+
+    } catch (error) {
+
+
+        console.error(error);
+
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td colspan="8">
+
+                    ❌ Tidak dapat terhubung
+                    ke Google Spreadsheet.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+
+/* ========================================
+   BUKA MODAL
+======================================== */
+
+function bukaModal(item) {
+
+
+    document.getElementById("balasID").value =
+        item.ID;
+
+
+    document.getElementById("tampilID").value =
+        item.ID;
+
+
+    document.getElementById("balasStatus").value =
+        item.Status || "Menunggu";
+
+
+    document.getElementById("balasan").value =
+        item.Balasan || "";
+
+
+    document.getElementById("balasMessage").innerHTML =
+        "";
+
+
+    document.getElementById("modalBalas")
+        .classList.add("show");
+
+}
+
+
+
+/* ========================================
+   TUTUP MODAL
+======================================== */
+
+function tutupModal() {
+
+    document.getElementById("modalBalas")
+        .classList.remove("show");
+
+}
+
+
+
+/* ========================================
+   KIRIM BALASAN
+======================================== */
+
+async function kirimBalasan() {
+
+
+    const id =
+        document.getElementById("balasID").value;
+
+
+    const status =
+        document.getElementById("balasStatus").value;
+
+
+    const balasan =
+        document.getElementById("balasan").value.trim();
+
+
+    const message =
+        document.getElementById("balasMessage");
+
+
+    const button =
+        document.getElementById("btnBalas");
+
+
+    if (!balasan) {
+
+        message.innerHTML =
+            "⚠️ Silakan tuliskan balasan.";
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...';
+
+
+    try {
+
+
+        const response =
+            await fetch(scriptURL, {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "text/plain;charset=utf-8"
+
+                },
+
+                body: JSON.stringify({
+
+                    action: "balasStatus",
+
+                    id: id,
+
+                    status: status,
+
+                    balasan: balasan
+
+                })
+
+            });
+
+
+        const hasil =
+            await response.json();
+
+
+        if (hasil.success) {
+
+
+            message.innerHTML =
+                "✅ Balasan berhasil disimpan.";
+
+
+            setTimeout(() => {
+
+                tutupModal();
+
+                ambilData();
+
+            }, 800);
+
+
+        } else {
+
+
+            message.innerHTML =
+                "❌ " +
+                (hasil.message ||
+                "Gagal menyimpan balasan.");
+
+        }
+
+
+    } catch (error) {
+
+
+        console.error(error);
+
+
+        message.innerHTML =
+            "❌ Terjadi kesalahan.";
+
+    }
+
+
+    button.disabled = false;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-paper-plane"></i> Kirim Balasan';
+
+}
+
+
+
+/* ========================================
+   KEAMANAN TAMPILAN DATA
+======================================== */
+
+function escapeHTML(value) {
+
+    if (value === null ||
+        value === undefined) {
+
+        return "";
+
+    }
+
+
+    return String(value)
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+
+/* ========================================
+   KLIK DI LUAR MODAL
+======================================== */
+
+window.addEventListener("click", function(e) {
+
+    const modal =
+        document.getElementById("modalBalas");
+
+
+    if (e.target === modal) {
+
+        tutupModal();
 
     }
 
 });
+
+
+
+/* ========================================
+   JALANKAN SAAT HALAMAN DIBUKA
+======================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ambilData
+);
+
 
 </script>
 
 
 </body>
 </html>
+```
