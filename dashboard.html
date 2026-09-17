@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Admin Desa Sepadu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f3ed;
+    color:#4b3221;
+}
+
+/* NAVBAR */
+.navbar{
+    background:white;
+    min-height:75px;
+    padding:0 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#4f6b32;
+}
+
+.logo i{
+    margin-right:8px;
+}
+
+.nav-menu{
+    list-style:none;
+    display:flex;
+    gap:8px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#66594d;
+    padding:11px 14px;
+    border-radius:10px;
+    display:block;
+    font-size:14px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active{
+    background:#eaf1dc;
+    color:#4f6b32;
+}
+
+/* DASHBOARD */
+.dashboard{
+    width:86%;
+    max-width:1300px;
+    margin:45px auto;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.top small{
+    color:#78964b;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.top h1{
+    font-size:36px;
+    margin:8px 0;
+}
+
+.top p{
+    color:#776e64;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    border:0;
+    padding:13px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    cursor:pointer;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.home{
+    background:#78964b;
+    color:white;
+}
+
+.logout{
+    background:#4b3221;
+    color:white;
+}
+
+/* STATISTIK */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icon{
+    width:55px;
+    height:55px;
+    background:#eaf1dc;
+    color:#4f6b32;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.stat span{
+    color:#776e64;
+    font-size:14px;
+}
+
+.stat h2{
+    font-size:30px;
+    margin-top:5px;
+}
+
+/* TABEL */
+.box{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(0,0,0,.06);
+}
+
+.box-head{
+    padding:25px;
+    border-bottom:1px solid #e5dfd3;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.box-head h2{
+    margin-bottom:6px;
+}
+
+.box-head p{
+    color:#776e64;
+    font-size:14px;
+}
+
+.delete-all{
+    background:#f3dfd8;
+    color:#8a4938;
+    border:0;
+    padding:11px 15px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#eef2e6;
+    padding:15px;
+    text-align:left;
+    font-size:13px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #eeeae2;
+    font-size:14px;
+    vertical-align:top;
+}
+
+.category{
+    background:#eaf1dc;
+    color:#4f6b32;
+    padding:6px 9px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.status{
+    padding:8px;
+    border:1px solid #ddd5ca;
+    border-radius:8px;
+}
+
+.delete{
+    border:0;
+    background:#f7e5e1;
+    color:#a34d3c;
+    padding:9px 11px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.empty{
+    text-align:center;
+    padding:60px!important;
+    color:#776e64;
+}
+
+/* FOOTER */
+footer{
+    margin-top:70px;
+    background:#4b3221;
+    color:white;
+    padding:30px 7%;
+    text-align:center;
+}
+
+footer p{
+    margin-top:8px;
+    opacity:.8;
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    .navbar{
+        flex-direction:column;
+        padding:15px;
+        gap:10px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .top h1{
+        font-size:29px;
+    }
+
+    .buttons{
+        width:100%;
+    }
+
+    .buttons .btn{
+        flex:1;
+        text-align:center;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .box-head{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .delete-all{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌿 Desa Sepadu
+    </div>
+
+    <ul class="nav-menu">
+        <li><a href="index.html">🏠 Beranda</a></li>
+        <li><a href="sejarah.html">📖 Sejarah</a></li>
+        <li><a href="fasilitas.html">🏡 Fasilitas</a></li>
+        <li><a href="lokasi.html">📍 Lokasi</a></li>
+        <li><a href="kontak.html">☎ Kontak</a></li>
+        <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
+    </ul>
+
+</nav>
+
+
+<main class="dashboard">
+
+    <div class="top">
+
+        <div>
+            <small>ADMIN DESA</small>
+
+            <h1>Dashboard Admin</h1>
+
+            <p>
+                Kelola pengaduan masyarakat Desa Sepadu.
+            </p>
+        </div>
+
+        <div class="buttons">
+
+            <a href="index.html" class="btn home">
+                🏠 Kembali ke Beranda
+            </a>
+
+            <button onclick="logout()" class="btn logout">
+                🚪 Keluar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <section class="stats">
+
+        <div class="stat">
+            <div class="icon">📩</div>
+
+            <div>
+                <span>Total Pengaduan</span>
+                <h2 id="total">0</h2>
+            </div>
+        </div>
+
+
+        <div class="stat">
+            <div class="icon">⏳</div>
+
+            <div>
+                <span>Pengaduan Baru</span>
+                <h2 id="baru">0</h2>
+            </div>
+        </div>
+
+
+        <div class="stat">
+            <div class="icon">✅</div>
+
+            <div>
+                <span>Pengaduan Selesai</span>
+                <h2 id="selesai">0</h2>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="box">
+
+        <div class="box-head">
+
+            <div>
+                <h2>💬 Pengaduan Masyarakat</h2>
+
+                <p>
+                    Semua pengaduan yang dikirim melalui website.
+                </p>
+            </div>
+
+            <button onclick="hapusSemua()" class="delete-all">
+                🗑 Hapus Semua
+            </button>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Pengaduan</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="data"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <h3>🌿 Desa Sepadu</h3>
+
+    <p>
+        Dusun Semayang, Kecamatan Semparuk,
+        Kabupaten Sambas, Kalimantan Barat.
+    </p>
+
+    <p>© 2026 Desa Sepadu</p>
+
+</footer>
+
+
+<script>
+
+if(sessionStorage.getItem("adminLogin") !== "true"){
+    window.location.href="admin.html";
+}
+
+
+function tampil(){
+
+    let data =
+        JSON.parse(localStorage.getItem("pengaduanDesa")) || [];
+
+    document.getElementById("total").textContent=data.length;
+
+    document.getElementById("baru").textContent=
+        data.filter(x=>x.status==="Baru").length;
+
+    document.getElementById("selesai").textContent=
+        data.filter(x=>x.status==="Selesai").length;
+
+
+    const tabel=document.getElementById("data");
+
+    tabel.innerHTML="";
+
+
+    if(data.length===0){
+
+        tabel.innerHTML=`
+            <tr>
+                <td colspan="7" class="empty">
+                    📭<br><br>
+                    Belum ada pengaduan masyarakat.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+
+    data.forEach((x,i)=>{
+
+        tabel.innerHTML+=`
+
+        <tr>
+
+            <td>${i+1}</td>
+
+            <td><b>${x.nama}</b></td>
+
+            <td>
+                <span class="category">
+                    ${x.kategori || "Lainnya"}
+                </span>
+            </td>
+
+            <td>${x.pengaduan}</td>
+
+            <td>${x.tanggal}</td>
+
+            <td>
+
+                <select
+                    class="status"
+                    onchange="ubahStatus(${x.id},this.value)">
+
+                    <option ${x.status==="Baru"?"selected":""}>
+                        Baru
+                    </option>
+
+                    <option ${x.status==="Diproses"?"selected":""}>
+                        Diproses
+                    </option>
+
+                    <option ${x.status==="Selesai"?"selected":""}>
+                        Selesai
+                    </option>
+
+                </select>
+
+            </td>
+
+            <td>
+
+                <button
+                    class="delete"
+                    onclick="hapus(${x.id})">
+                    🗑
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+function ubahStatus(id,status){
+
+    let data =
+        JSON.parse(localStorage.getItem("pengaduanDesa")) || [];
+
+    data.forEach(x=>{
+        if(x.id===id){
+            x.status=status;
+        }
+    });
+
+    localStorage.setItem(
+        "pengaduanDesa",
+        JSON.stringify(data)
+    );
+
+    tampil();
+}
+
+
+function hapus(id){
+
+    if(!confirm("Hapus pengaduan ini?")) return;
+
+    let data =
+        JSON.parse(localStorage.getItem("pengaduanDesa")) || [];
+
+    data=data.filter(x=>x.id!==id);
+
+    localStorage.setItem(
+        "pengaduanDesa",
+        JSON.stringify(data)
+    );
+
+    tampil();
+}
+
+
+function hapusSemua(){
+
+    if(!confirm("Hapus semua pengaduan?")) return;
+
+    localStorage.removeItem("pengaduanDesa");
+
+    tampil();
+}
+
+
+function logout(){
+
+    sessionStorage.removeItem("adminLogin");
+
+    window.location.href="admin.html";
+}
+
+
+tampil();
+
+</script>
+
+</body>
+</html>

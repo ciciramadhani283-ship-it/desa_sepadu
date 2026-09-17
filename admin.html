@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Desa Sepadu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        .admin-page {
+            min-height: calc(100vh - 78px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf2e4,
+                    #f4eee6
+                );
+        }
+
+
+        .admin-login {
+            width: 100%;
+            max-width: 430px;
+
+            padding: 38px;
+
+            background: white;
+
+            border: 1px solid #e5dfd3;
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 20px 55px rgba(60,45,30,0.12);
+
+            animation: fadeUp 0.7s ease;
+        }
+
+
+        .admin-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background: #eaf1dc;
+
+            color: #78964b;
+
+            font-size: 27px;
+        }
+
+
+        .admin-login h1 {
+            text-align: center;
+
+            color: #4b3221;
+
+            font-size: 25px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .admin-login > p {
+            text-align: center;
+
+            color: #776e64;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+        }
+
+
+        .admin-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 17px;
+        }
+
+
+        .admin-form label {
+            display: block;
+
+            color: #4b3221;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+        }
+
+
+        .admin-form input {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ddd8cf;
+
+            border-radius: 13px;
+
+            background: #fafaf8;
+
+            outline: none;
+
+            font-size: 12px;
+
+            color: #4b3221;
+        }
+
+
+        .admin-form input:focus {
+            border-color: #78964b;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(120,150,75,0.10);
+        }
+
+
+        .admin-login-btn {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 13px;
+
+            background: #78964b;
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+
+        .admin-login-btn:hover {
+            background: #4f6b32;
+
+            transform: translateY(-2px);
+        }
+
+
+        .back-home {
+            display: block;
+
+            margin-top: 20px;
+
+            text-align: center;
+
+            color: #78964b;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        .back-home:hover {
+            color: #4f6b32;
+        }
+
+
+        #loginMessage {
+            text-align: center;
+
+            margin-top: 15px;
+
+            font-size: 11px;
+
+            color: #c45555;
+        }
+
+
+        @media (max-width: 500px) {
+
+            .admin-login {
+                padding: 28px 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <div>
+            <strong>Desa Sepadu</strong>
+            <small>Dusun Semayang</small>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Beranda
+        </a>
+
+        <a href="sejarah.html">
+            <i class="fa-solid fa-book-open"></i>
+            Sejarah
+        </a>
+
+        <a href="fasilitas.html">
+            <i class="fa-solid fa-building"></i>
+            Fasilitas
+        </a>
+
+        <a href="lokasi.html">
+            <i class="fa-solid fa-location-dot"></i>
+            Lokasi
+        </a>
+
+        <a href="kontak.html">
+            <i class="fa-solid fa-phone"></i>
+            Kontak
+        </a>
+
+        <a href="admin.html" class="active">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="admin-page">
+
+    <div class="admin-login">
+
+
+        <div class="admin-icon">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+        </div>
+
+
+        <h1>
+            Login Admin
+        </h1>
+
+
+        <p>
+            Masuk untuk melihat dan mengelola
+            pengaduan masyarakat Desa Sepadu.
+        </p>
+
+
+        <form id="loginForm" class="admin-form">
+
+
+            <div>
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Masukkan username"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="admin-login-btn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Masuk sebagai Admin
+
+            </button>
+
+
+        </form>
+
+
+        <p id="loginMessage"></p>
+
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Kembali ke Beranda
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+<script>
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+
+    const username =
+        document.getElementById("username").value;
+
+    const password =
+        document.getElementById("password").value;
+
+
+    /*
+       LOGIN DEMO
+
+       Username : admin
+       Password : sepadu2026
+    */
+
+
+    if (
+        username === "admin" &&
+        password === "sepadu2026"
+    ) {
+
+        sessionStorage.setItem(
+            "adminLogin",
+            "true"
+        );
+
+        window.location.href =
+            "dashboard.html";
+
+    } else {
+
+        document.getElementById(
+            "loginMessage"
+        ).textContent =
+            "❌ Username atau password salah.";
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>

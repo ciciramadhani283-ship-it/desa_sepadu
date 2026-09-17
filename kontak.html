@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontak - Desa Sepadu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f7f2;
+            color: #4b3221;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background: #78964b;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #eaf1dc;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu li {
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #eaf1dc;
+            transform: translateY(-2px);
+        }
+
+        /* HEADER */
+        .page-header {
+            text-align: center;
+            padding: 80px 20px 55px;
+            background: linear-gradient(
+                135deg,
+                #eaf1dc,
+                #ffffff
+            );
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            color: #4f6b32;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #776e64;
+            font-size: 15px;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            padding: 60px 7%;
+        }
+
+        .contact-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid #e5dfd3;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(75, 50, 33, 0.08);
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(75, 50, 33, 0.12);
+        }
+
+        .contact-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #eaf1dc;
+            color: #4f6b32;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-card h3 {
+            color: #4f6b32;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .contact-card p {
+            color: #776e64;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* BUTTON */
+        .button-area {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #78964b;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #4f6b32;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background: #4b3221;
+            color: white;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 18px 15px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html" class="logo">
+            Desa <span>Sepadu</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li>
+                <a href="index.html">🏠 Beranda</a>
+            </li>
+
+            <li>
+                <a href="sejarah.html">📖 Sejarah</a>
+            </li>
+
+            <li>
+                <a href="fasilitas.html">🏫 Fasilitas</a>
+            </li>
+
+            <li>
+                <a href="lokasi.html">📍 Lokasi</a>
+            </li>
+
+            <li>
+                <a href="kontak.html" class="active">📞 Kontak</a>
+            </li>
+
+            <li>
+                <a href="admin.html">👤 Admin</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- HEADER -->
+    <section class="page-header">
+        <h1>Kontak Desa Sepadu</h1>
+        <p>Informasi kontak dan pelayanan Desa Sepadu</p>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Alamat</h3>
+                <p>
+                    Dusun Semayang<br>
+                    Kecamatan Semparuk<br>
+                    Kabupaten Sambas<br>
+                    Kalimantan Barat
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Telepon</h3>
+                <p>
+                   085762902609
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Email</h3>
+                <p>
+                    sucirmdni@gmail.com
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🕐</div>
+                <h3>Jam Pelayanan</h3>
+                <p>
+                    Senin - Jumat<br>
+                    08.00 - 15.00 WIB
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="button-area">
+            <a href="index.html" class="btn">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Desa Sepadu • Dusun Semayang
+    </footer>
+
+</body>
+</html>

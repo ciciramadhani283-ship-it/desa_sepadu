@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desa Sepadu - Dusun Semayang</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        <div>
+            <strong>Desa Sepadu</strong>
+            <small>Dusun Semayang</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            Beranda
+        </a>
+
+        <a href="sejarah.html">
+            <i class="fa-solid fa-book-open"></i>
+            Sejarah
+        </a>
+
+        <a href="fasilitas.html">
+            <i class="fa-solid fa-building"></i>
+            Fasilitas
+        </a>
+
+        <a href="lokasi.html">
+            <i class="fa-solid fa-location-dot"></i>
+            Lokasi
+        </a>
+
+        <a href="kontak.html">
+            <i class="fa-solid fa-phone"></i>
+            Kontak
+        </a>
+
+        <a href="admin.html" class="admin-menu">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            SELAMAT DATANG
+        </span>
+
+        <h1>
+            Desa Sepadu
+            <br>
+            <span>Dusun Semayang</span>
+        </h1>
+
+        <p>
+            Mengenal lebih dekat kehidupan, keindahan,
+            fasilitas dan informasi Desa Sepadu, Dusun Semayang.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="sejarah.html" class="btn-primary">
+                Jelajahi Desa
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="lokasi.html" class="btn-secondary">
+                <i class="fa-solid fa-location-dot"></i>
+                Lihat Lokasi
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TENTANG ================= -->
+<section class="home-section">
+
+    <div class="section-title">
+
+        <span>TENTANG DESA</span>
+
+        <h2>
+            Mengenal Desa Sepadu
+        </h2>
+
+        <p>
+            Desa Sepadu merupakan bagian dari kehidupan masyarakat
+            yang memiliki lingkungan, fasilitas dan keindahan alam
+            yang menjadi bagian dari kehidupan sehari-hari.
+        </p>
+
+    </div>
+
+
+    <div class="home-cards">
+
+        <div class="home-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-tree"></i>
+            </div>
+
+            <h3>Keindahan Desa</h3>
+
+            <p>
+                Suasana pedesaan yang asri dengan persawahan
+                dan pemandangan alam di sekitar desa.
+            </p>
+
+        </div>
+
+
+        <div class="home-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-school"></i>
+            </div>
+
+            <h3>Fasilitas Desa</h3>
+
+            <p>
+                Terdapat berbagai fasilitas yang digunakan
+                masyarakat untuk kebutuhan sehari-hari.
+            </p>
+
+        </div>
+
+
+        <div class="home-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <h3>Kehidupan Masyarakat</h3>
+
+            <p>
+                Kehidupan masyarakat yang saling membantu
+                dan menjaga kebersamaan di lingkungan desa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PENGADUAN ================= -->
+<section class="complaint-section" id="pengaduan">
+
+    <div class="complaint-box">
+
+        <div class="complaint-info">
+
+            <span class="section-label">
+                PENGADUAN MASYARAKAT
+            </span>
+
+            <h2>
+                Sampaikan Pengaduan Anda
+            </h2>
+
+            <p>
+                Jika terdapat masalah atau hal yang perlu disampaikan
+                mengenai lingkungan desa, silakan kirimkan pengaduan
+                melalui formulir berikut.
+            </p>
+
+            <div class="complaint-note">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Pengaduan akan diterima oleh admin desa
+                    untuk ditindaklanjuti.
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+        <form id="complaintForm" class="complaint-form">
+
+            <div class="form-group">
+
+                <label for="nama">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama Anda"
+                    required
+                >
+
+            </div>
+
+
+            <!-- KATEGORI -->
+            <div class="form-group">
+
+                <label for="kategori">
+                    Kategori Pengaduan
+                </label>
+
+                <select id="kategori" required>
+
+                    <option value="">
+                        -- Pilih kategori --
+                    </option>
+
+                    <option value="Infrastruktur">
+                        Infrastruktur
+                    </option>
+
+                    <option value="Kebersihan">
+                        Kebersihan
+                    </option>
+
+                    <option value="Keamanan">
+                        Keamanan
+                    </option>
+
+                    <option value="Pelayanan Desa">
+                        Pelayanan Desa
+                    </option>
+
+                    <option value="Lingkungan">
+                        Lingkungan
+                    </option>
+
+                    <option value="Fasilitas Desa">
+                        Fasilitas Desa
+                    </option>
+
+                    <option value="Lainnya">
+                        Lainnya
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ISI PENGADUAN -->
+            <div class="form-group">
+
+                <label for="pengaduanText">
+                    Isi Pengaduan
+                </label>
+
+                <textarea
+                    id="pengaduanText"
+                    rows="5"
+                    placeholder="Tuliskan pengaduan Anda..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="complaint-button">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Kirim Pengaduan
+
+            </button>
+
+
+            <p id="complaintMessage" class="complaint-message"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+
+    <div>
+
+        <span>DESA SEPADU</span>
+
+        <h2>
+            Mari Kenali Lebih Dekat Desa Kami
+        </h2>
+
+        <p>
+            Temukan informasi sejarah, fasilitas,
+            lokasi dan kontak Desa Sepadu.
+        </p>
+
+    </div>
+
+    <a href="kontak.html" class="btn-primary">
+        Hubungi Kami
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+    <div class="footer-logo">
+        <i class="fa-solid fa-leaf"></i>
+        Desa Sepadu
+    </div>
+
+    <p>
+        Dusun Semayang • Kecamatan Semparuk • Kabupaten Sambas
+    </p>
+
+    <small>
+        © 2026 Desa Sepadu. Semua hak dilindungi.
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lokasi Desa Sepadu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f3ed;
+    color:#4b3221;
+}
+
+.navbar{
+    background:white;
+    min-height:75px;
+    padding:0 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+    color:#4f6b32;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-menu{
+    list-style:none;
+    display:flex;
+    gap:8px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#66594d;
+    padding:11px 14px;
+    border-radius:10px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active{
+    background:#eaf1dc;
+    color:#4f6b32;
+}
+
+.header{
+    background:linear-gradient(
+        100deg,
+        #4f6b32,
+        #78964b
+    );
+    color:white;
+    padding:65px 8%;
+}
+
+.header h1{
+    font-size:40px;
+    margin:10px 0;
+}
+
+.header p{
+    max-width:650px;
+    line-height:1.7;
+}
+
+.content{
+    width:86%;
+    max-width:1200px;
+    margin:45px auto;
+}
+
+.location{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    gap:30px;
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+
+.info h2{
+    font-size:30px;
+    margin:15px 0;
+}
+
+.info>p{
+    color:#776e64;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.item{
+    padding:14px 0;
+    border-bottom:1px solid #e5dfd3;
+}
+
+.item b{
+    color:#4f6b32;
+}
+
+.item p{
+    margin-top:5px;
+    color:#776e64;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.btn{
+    padding:13px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back{
+    background:#4b3221;
+    color:white;
+}
+
+.maps{
+    background:#78964b;
+    color:white;
+}
+
+.map{
+    min-height:420px;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.map iframe{
+    width:100%;
+    height:420px;
+    border:0;
+}
+
+footer{
+    margin-top:70px;
+    background:#4b3221;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+footer p{
+    margin-top:8px;
+    opacity:.8;
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        flex-direction:column;
+        padding:15px;
+        gap:10px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .location{
+        grid-template-columns:1fr;
+    }
+
+    .header h1{
+        font-size:30px;
+    }
+
+    .map iframe{
+        height:330px;
+    }
+
+    .map{
+        min-height:330px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .buttons a{
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌿 Desa Sepadu
+    </div>
+
+    <ul class="nav-menu">
+
+        <li><a href="index.html">🏠 Beranda</a></li>
+
+        <li><a href="sejarah.html">📖 Sejarah</a></li>
+
+        <li><a href="fasilitas.html">🏡 Fasilitas</a></li>
+
+        <li><a href="lokasi.html" class="active">
+            📍 Lokasi
+        </a></li>
+
+        <li><a href="kontak.html">☎ Kontak</a></li>
+
+        <li><a href="admin.html">🔐 Admin</a></li>
+
+    </ul>
+
+</nav>
+
+
+<section class="header">
+
+    <h1>📍 Lokasi Desa Sepadu</h1>
+
+    <p>
+        Temukan lokasi Desa Sepadu, Dusun Semayang,
+        Kecamatan Semparuk, Kabupaten Sambas,
+        Kalimantan Barat.
+    </p>
+
+</section>
+
+
+<main class="content">
+
+    <div class="location">
+
+        <div class="info">
+
+            <h2>Desa Sepadu</h2>
+
+            <p>
+                Berikut adalah informasi lokasi
+                Desa Sepadu, Dusun Semayang.
+            </p>
+
+            <div class="item">
+                <b>📍 Alamat</b>
+                <p>Dusun Semayang</p>
+            </div>
+
+            <div class="item">
+                <b>🗺 Kecamatan</b>
+                <p>Semparuk</p>
+            </div>
+
+            <div class="item">
+                <b>🏙 Kabupaten</b>
+                <p>Sambas</p>
+            </div>
+
+            <div class="item">
+                <b>🌿 Provinsi</b>
+                <p>Kalimantan Barat</p>
+            </div>
+
+            <div class="buttons">
+
+                <a href="index.html" class="btn back">
+                    🏠 Kembali ke Beranda
+                </a>
+
+                <a
+                    href="https://maps.app.goo.gl/PiHh3zA41eQLoQYS6?g_st=ac"
+                    target="_blank"
+                    class="btn maps">
+                    📍 Buka Google Maps
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Desa%20Sepadu%2C%20Dusun%20Semayang%2C%20Semparuk%2C%20Sambas%2C%20Kalimantan%20Barat&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <h3>🌿 Desa Sepadu</h3>
+
+    <p>
+        Dusun Semayang, Kecamatan Semparuk,
+        Kabupaten Sambas, Kalimantan Barat.
+    </p>
+
+    <p>© 2026 Desa Sepadu</p>
+
+</footer>
+
+</body>
+</html>
