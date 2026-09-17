@@ -357,3 +357,30 @@
 
 </body>
 </html>
+
+    ...
+
+    <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
+
+    document.getElementById("formPengajuan").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        fetch(scriptURL, {
+            method: "POST",
+            body: new FormData(this)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("✅ Pengajuan berhasil dikirim!");
+            this.reset();
+        })
+        .catch(error => {
+            alert("❌ Pengajuan gagal dikirim!");
+            console.error(error);
+        });
+    });
+    </script>
+
+</body>
+</html>
