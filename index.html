@@ -21,6 +21,7 @@
 
     <div class="logo">
         <i class="fa-solid fa-leaf"></i>
+
         <div>
             <strong>Desa Sepadu</strong>
             <small>Dusun Semayang</small>
@@ -28,6 +29,7 @@
     </div>
 
     <nav>
+
         <a href="index.html" class="active">
             <i class="fa-solid fa-house"></i>
             Beranda
@@ -57,6 +59,7 @@
             <i class="fa-solid fa-user-shield"></i>
             Admin
         </a>
+
     </nav>
 
 </header>
@@ -175,139 +178,6 @@
 </section>
 
 
-<!-- ================= PENGADUAN ================= -->
-<section class="complaint-section" id="pengaduan">
-
-    <div class="complaint-box">
-
-        <div class="complaint-info">
-
-            <span class="section-label">
-                PENGADUAN MASYARAKAT
-            </span>
-
-            <h2>
-                Sampaikan Pengaduan Anda
-            </h2>
-
-            <p>
-                Jika terdapat masalah atau hal yang perlu disampaikan
-                mengenai lingkungan desa, silakan kirimkan pengaduan
-                melalui formulir berikut.
-            </p>
-
-            <div class="complaint-note">
-                <i class="fa-solid fa-circle-info"></i>
-
-                <span>
-                    Pengaduan akan diterima oleh admin desa
-                    untuk ditindaklanjuti.
-                </span>
-            </div>
-
-        </div>
-
-
-        <!-- FORM -->
-        <form id="complaintForm" class="complaint-form">
-
-            <div class="form-group">
-
-                <label for="nama">
-                    Nama
-                </label>
-
-                <input
-                    type="text"
-                    id="nama"
-                    placeholder="Masukkan nama Anda"
-                    required
-                >
-
-            </div>
-
-
-            <!-- KATEGORI -->
-            <div class="form-group">
-
-                <label for="kategori">
-                    Kategori Pengaduan
-                </label>
-
-                <select id="kategori" required>
-
-                    <option value="">
-                        -- Pilih kategori --
-                    </option>
-
-                    <option value="Infrastruktur">
-                        Infrastruktur
-                    </option>
-
-                    <option value="Kebersihan">
-                        Kebersihan
-                    </option>
-
-                    <option value="Keamanan">
-                        Keamanan
-                    </option>
-
-                    <option value="Pelayanan Desa">
-                        Pelayanan Desa
-                    </option>
-
-                    <option value="Lingkungan">
-                        Lingkungan
-                    </option>
-
-                    <option value="Fasilitas Desa">
-                        Fasilitas Desa
-                    </option>
-
-                    <option value="Lainnya">
-                        Lainnya
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- ISI PENGADUAN -->
-            <div class="form-group">
-
-                <label for="pengaduanText">
-                    Isi Pengaduan
-                </label>
-
-                <textarea
-                    id="pengaduanText"
-                    rows="5"
-                    placeholder="Tuliskan pengaduan Anda..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <button type="submit" class="complaint-button">
-
-                <i class="fa-solid fa-paper-plane"></i>
-
-                Kirim Pengaduan
-
-            </button>
-
-
-            <p id="complaintMessage" class="complaint-message"></p>
-
-        </form>
-
-    </div>
-
-</section>
-
-
 <!-- ================= CTA ================= -->
 <section class="cta-section">
 
@@ -354,33 +224,6 @@
 
 
 <script src="script.js"></script>
-
-</body>
-</html>
-
-    ...
-
-    <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
-
-    document.getElementById("formPengajuan").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        fetch(scriptURL, {
-            method: "POST",
-            body: new FormData(this)
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert("✅ Pengajuan berhasil dikirim!");
-            this.reset();
-        })
-        .catch(error => {
-            alert("❌ Pengajuan gagal dikirim!");
-            console.error(error);
-        });
-    });
-    </script>
 
 </body>
 </html>
