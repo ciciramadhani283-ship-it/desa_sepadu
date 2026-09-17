@@ -17,16 +17,21 @@
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <header class="navbar">
 
     <div class="logo">
+
         <i class="fa-solid fa-leaf"></i>
 
         <div>
             <strong>Desa Sepadu</strong>
             <small>Dusun Semayang</small>
         </div>
+
     </div>
+
 
     <nav>
 
@@ -70,6 +75,8 @@
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
     <div class="hero-content">
@@ -85,14 +92,16 @@
         </h1>
 
         <p>
-            Sampaikan pengaduan untuk membantu
-            kemajuan Desa Sepadu.
+            Sampaikan pengaduan, keluhan, atau saran
+            untuk membantu kemajuan Desa Sepadu.
         </p>
 
     </div>
 
 </section>
 
+
+<!-- ================= FORM ================= -->
 
 <section class="complaint-section">
 
@@ -101,16 +110,16 @@
         <div class="complaint-info">
 
             <span class="section-label">
-                PENGADUAN MASYARAKAT
+                FORM PENGADUAN
             </span>
 
             <h2>
-                Sampaikan Aduan Anda
+                Sampaikan Pengaduan Anda
             </h2>
 
             <p>
-                Silakan isi formulir berikut dengan
-                informasi pengaduan yang jelas.
+                Silakan isi data berikut dengan benar.
+                Pengaduan akan diterima oleh admin Desa Sepadu.
             </p>
 
             <div class="complaint-note">
@@ -118,8 +127,8 @@
                 <i class="fa-solid fa-circle-info"></i>
 
                 <span>
-                    Setiap pengaduan akan diterima
-                    dan ditindaklanjuti oleh admin desa.
+                    Setelah dikirim, pengaduan akan memiliki
+                    ID dan status untuk diproses oleh admin.
                 </span>
 
             </div>
@@ -127,7 +136,12 @@
         </div>
 
 
+        <!-- FORM PENGADUAN -->
+
         <form id="pengaduanForm" class="complaint-form">
+
+
+            <!-- NAMA -->
 
             <div class="form-group">
 
@@ -138,13 +152,14 @@
                 <input
                     type="text"
                     id="nama"
-                    name="nama"
-                    placeholder="Masukkan nama"
+                    placeholder="Masukkan nama Anda"
                     required
                 >
 
             </div>
 
+
+            <!-- KATEGORI -->
 
             <div class="form-group">
 
@@ -152,11 +167,7 @@
                     Kategori
                 </label>
 
-                <select
-                    id="kategori"
-                    name="kategori"
-                    required
-                >
+                <select id="kategori" required>
 
                     <option value="">
                         -- Pilih Kategori --
@@ -195,6 +206,8 @@
             </div>
 
 
+            <!-- ISI PENGADUAN -->
+
             <div class="form-group">
 
                 <label for="isi_pengaduan">
@@ -203,18 +216,20 @@
 
                 <textarea
                     id="isi_pengaduan"
-                    name="isi_pengaduan"
                     rows="7"
-                    placeholder="Tuliskan isi pengaduan..."
+                    placeholder="Tuliskan pengaduan Anda..."
                     required
                 ></textarea>
 
             </div>
 
 
+            <!-- TOMBOL -->
+
             <button
                 type="submit"
                 class="complaint-button"
+                id="btnKirim"
             >
 
                 <i class="fa-solid fa-paper-plane"></i>
@@ -224,7 +239,13 @@
             </button>
 
 
-            <p id="pesan"></p>
+            <!-- PESAN -->
+
+            <p
+                id="pesan"
+                class="complaint-message"
+            ></p>
+
 
         </form>
 
@@ -233,11 +254,16 @@
 </section>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
     <div class="footer-logo">
+
         <i class="fa-solid fa-leaf"></i>
+
         Desa Sepadu
+
     </div>
 
     <p>
@@ -251,57 +277,109 @@
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbwfNbTBmotksGISINYbLzSJ5I1PTSsXj1z1EDwdxUyJfGp7GZ8f606rJl0-YmlFv4mL/exec";
 
+
 const form =
 document.getElementById("pengaduanForm");
+
 
 const pesan =
 document.getElementById("pesan");
 
 
-form.addEventListener("submit", function(e) {
+const tombol =
+document.getElementById("btnKirim");
+
+
+form.addEventListener("submit", async function(e) {
 
     e.preventDefault();
 
-    pesan.innerHTML =
-        "⏳ Pengaduan sedang dikirim...";
+
+    tombol.disabled = true;
+
+    tombol.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+
+    pesan.innerHTML = "";
 
 
-    fetch(scriptURL, {
+    const data = {
 
-        method: "POST",
+        action: "tambah",
 
-        body: new FormData(form)
+        nama:
+            document.getElementById("nama").value.trim(),
 
-    })
+        kategori:
+            document.getElementById("kategori").value,
 
-    .then(response => response.text())
+        isi_pengaduan:
+            document.getElementById("isi_pengaduan").value.trim()
 
-    .then(data => {
+    };
 
-        pesan.innerHTML =
-            "✅ Pengaduan berhasil dikirim!";
 
-        form.reset();
+    try {
 
-    })
+        const response = await fetch(scriptURL, {
 
-    .catch(error => {
+            method: "POST",
 
-        pesan.innerHTML =
-            "❌ Pengaduan gagal dikirim.";
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(data)
+
+        });
+
+
+        const hasil = await response.json();
+
+
+        if (hasil.success) {
+
+            pesan.innerHTML =
+                "✅ Pengaduan berhasil dikirim! ID pengaduan: <strong>"
+                + hasil.id +
+                "</strong>";
+
+            form.reset();
+
+        } else {
+
+            pesan.innerHTML =
+                "❌ " + (hasil.message || "Pengaduan gagal dikirim.");
+
+        }
+
+
+    } catch (error) {
 
         console.error(error);
 
-    });
+        pesan.innerHTML =
+            "❌ Terjadi kesalahan saat mengirim pengaduan.";
+
+    }
+
+
+    tombol.disabled = false;
+
+    tombol.innerHTML =
+        '<i class="fa-solid fa-paper-plane"></i> Kirim Pengaduan';
 
 });
 
 </script>
+
 
 </body>
 </html>
